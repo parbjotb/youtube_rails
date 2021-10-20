@@ -1,0 +1,2 @@
+class ChannelCreator < ApplicationRecord
+end

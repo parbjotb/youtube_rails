@@ -1,0 +1,11 @@
+Videos table
+  - video_id (or id), title, description, views, category_id
+
+ChannelCreator Table (1 to many with Videos)
+  - id, Name(channel_title)
+
+video_categories table (joiner table for the many to many below)
+  - video_id, category_id
+
+Categories table (many to many with videos table)
+  - id, Name
