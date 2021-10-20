@@ -1,7 +1,7 @@
-Videos table
+Videos table (similar to movies from demo)
   - video_id (or id), title, description, views, category_id
 
-ChannelCreator Table (1 to many with Videos)
+ChannelCreator Table (1 to many with Videos) (similar to production company from demo)
   - id, Name(channel_title)
 
 video_categories table (joiner table for the many to many below)
