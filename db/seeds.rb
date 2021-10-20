@@ -17,7 +17,17 @@ csv_data = File.read(filename)
 videos = CSV.parse(csv_data, headers:true, liberal_parsing: true, encoding: "utf-8")
 
 videos.each do |v|
-  puts v["title"]
+  #puts v["title"]
+  # now we will create the creators as we loop through
+  # find or create by makes it so it will only create the channel once instead of duplicate entries
+  channel_creator = ChannelCreator.find_or_create_by(name: v["channel_title"])
+
+  # if the channel exists and is valid then do something
+  if channel_creator && channel_creator.valid?
+    # create video here
+  else
+    puts "Invalid channel creator,#{v["channel_title"]} for video: #{v["title"]}"
+  end
 end
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
