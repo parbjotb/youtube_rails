@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "home#index"
   # resources links to controller, only show the index and show pages
   resources :videos, only: %i[index show]
   resources :channel_creators, only: %i[index show]
