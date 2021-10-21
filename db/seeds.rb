@@ -27,9 +27,12 @@ videos = CSV.parse(csv_data, headers: true, liberal_parsing: true, encoding: "ut
     # this should allow us to create videos off the channel
     # thus wiring up the foreign key without us needing to specify it
     video = channel_creator.videos.create(
-      title:       v["title"],
-      views:       v["views"],
-      description: v["description"]
+      title:         v["title"],
+      views:         v["views"],
+      description:   v["description"],
+      likes:         v["likes"],
+      dislikes:      v["dislikes"],
+      trending_date: v["trending_date"]
     )
 
     # this syntax below is equal to
