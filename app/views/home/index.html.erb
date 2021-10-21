@@ -13,12 +13,7 @@
   <div class="column">
     <h2 class="title is-2">Popular Youtubers</h2>
     <ol class="ml-5">
-      <%= @channel_creators.each do |c| %>
-        <li>
-          <%= link_to c.name, c%>
-          <em><%= c.video_count %> Popular uploads</em>
-        </li>
-        <% end %>
+      <%= render @channel_creators %>
     </ol>
   </div>
 </div>
