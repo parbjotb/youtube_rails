@@ -1,6 +1,6 @@
 <div class="columns">
   <div class="column">
-    <h2 class="title is-2">Trending Youtube Videos</h2>>
+    <h2 class="title is-2">Trending Youtube Songs</h2>
     <ol class="ml-5">
       <%= @videos.each do |v| %>
         <li>
@@ -12,5 +12,13 @@
   </div>
   <div class="column">
     <h2 class="title is-2">Popular Youtubers</h2>
+    <ol class="ml-5">
+      <%= @channel_creators.each do |c| %>
+        <li>
+          <%= link_to c.name, c%>
+          <em><%= c.video_count %> Popular uploads</em>
+        </li>
+        <% end %>
+    </ol>
   </div>
 </div>

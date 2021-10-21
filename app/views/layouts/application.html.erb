@@ -3,7 +3,7 @@
   <head>
   <%# this line below makes the browser say the name of the video
   only if we are on a video show page, not the index %>
-    <title><%= yield(:html_title) + " - " if content_for?(:html_title) %>Trending Youtube Videos</title>
+    <title><%= yield(:html_title) + " - " if content_for?(:html_title) %>Trending Youtube Songs</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,7 @@
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title is-1">Trending Youtube Videos from 2017 and onward! (WILL BE CHANGING STYLES)</h1>
+      <h1 class="title is-1">Trending Youtube Songs from 2017 and onward! (WILL BE CHANGING STYLES)</h1>
     </div>
     <%= yield %>
   </section>
