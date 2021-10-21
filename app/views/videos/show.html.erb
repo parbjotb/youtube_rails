@@ -1,8 +1,7 @@
 <h2 class="title is-2"><%= @video.title %></h2>
 
-
 <article class="message is-dark">
-  <div class="message=header">
+  <div class="message-header">
     <p>Description:</p>
   </div>
   <div class="message-body">
@@ -31,4 +30,9 @@
 <p>
   <strong>Dislikes: </strong>
   <%= @video.dislikes%>
+</p>
+
+<p>
+  <strong>Created by Youtuber:</strong>
+  <%= link_to @video.channel_creator.name, @video.channel_creator %>
 </p>
