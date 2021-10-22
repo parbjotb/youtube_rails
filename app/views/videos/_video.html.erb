@@ -1,0 +1,38 @@
+<h2 class="title is-2"><%= video.title %></h2>
+
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Description:</p>
+  </div>
+  <div class="message-body">
+    <%= video.description %>
+  </div>
+</article>
+
+<progress class="progress is-info" value="<%= video.views %>" max=3000000000>
+  <%= video.views %>
+</progress>
+
+<p>
+  <strong>Trending Date: </strong>
+  <%= video.trending_date %>
+</p>
+<p>
+  <strong>Views: </strong>
+  <%= video.views%>
+</p>
+
+<p>
+  <strong>Likes: </strong>
+  <%= video.likes%>
+</p>
+
+<p>
+  <strong>Dislikes: </strong>
+  <%= video.dislikes%>
+</p>
+
+<p>
+  <strong>Created by Youtuber:</strong>
+  <%= link_to video.channel_creator.name, video.channel_creator %>
+</p>
