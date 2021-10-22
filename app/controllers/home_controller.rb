@@ -3,4 +3,8 @@ class HomeController < ApplicationController
     @videos = Video.includes(:channel_creator).order("views DESC").limit(10)
     @channel_creators = ChannelCreator.ordered_by_videos.limit(10)
   end
+
+  def about
+    # just setting the path, can leave this empty for now
+  end
 end
