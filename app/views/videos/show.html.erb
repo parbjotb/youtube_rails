@@ -1,5 +1,5 @@
 <% content_for(:html_title) { @video.title } %>
 <%# This line above puts the value of video.title inside html_title %>
 
-<%# We just pass it the collection of movies, rails knows to do it for each movie from here %>
-<%= render @movies %>
+<%# Saying @video will have the show page show an individual listing %>
+<%= render partial: 'video', object: @video, locals: {show_link: false } %>

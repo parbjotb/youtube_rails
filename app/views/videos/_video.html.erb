@@ -1,4 +1,10 @@
-<h2 class="title is-2"><%= video.title %></h2>
+<h2 class="title is-2">
+  <% if show_link %>
+    <%= link_to video.title, video %>
+  <% else %>
+    <%= video.title %>
+  <% end %>
+</h2>>
 
 <article class="message is-dark">
   <div class="message-header">
@@ -36,3 +42,5 @@
   <strong>Created by Youtuber:</strong>
   <%= link_to video.channel_creator.name, video.channel_creator %>
 </p>
+
+<hr>
