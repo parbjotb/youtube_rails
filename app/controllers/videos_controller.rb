@@ -6,5 +6,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @base_url = "https://www.youtube.com/watch?v="
+    # @videoID = Video.video_id
   end
 end

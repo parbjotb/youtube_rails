@@ -1,10 +1,10 @@
-<h2 class="title is-2"><%= @channel_creator.name %></h2>
+<h2 class="display-2"><%= @channel_creator.name %></h2>
 
-<p class= "mb-5">
+<p class="font-monospace">
   This youtube channel has <%= @channel_creator.videos.count %> popular uploads as of 2017.
 </p>
 
-<h3 class="title is-3">Youtube uploads from <%= @channel_creator.name %></h3>
+<h3 class="display-3">Youtube uploads from <%= @channel_creator.name %></h3>
 <ul>
   <% @channel_creator.videos.each do | video | %>
     <li><%= link_to video.title, video %> with <%= video.views %> views</li>

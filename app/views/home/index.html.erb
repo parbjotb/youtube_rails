@@ -1,18 +1,18 @@
-<div class="columns">
-  <div class="column">
-    <h2 class="title is-2">Trending Youtube Songs</h2>
-    <ol class="ml-5">
+<div class="container">
+  <div class="container">
+    <h2 class="display-2">Trending Youtube Songs</h2>
+    <ol class="list-group list-group-numbered">
       <%= @videos.each do |v| %>
-        <li>
+        <li class="list-group-item">
           <%= link_to v.title, v%>
           <em><%= v.channel_creator.name %></em>
         </li>
         <% end %>
     </ol>
   </div>
-  <div class="column">
-    <h2 class="title is-2">Popular Youtubers</h2>
-    <ol class="ml-5">
+  <div class="container">
+    <h2 class="display-2">Popular Youtubers</h2>
+    <ol class="list-group list-group-numbered">
       <%= render @channel_creators %>
     </ol>
   </div>
