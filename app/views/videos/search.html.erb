@@ -1,0 +1,9 @@
+<p class="">
+  Found <%= pluralize(@videos.count, 'Video') %> when searching for: <%= params[:keywords] %>
+</p>
+
+<ul>
+  <% @videos.each do |video| %>
+    <li><%= link_to video.title, video %></li>
+  <% end %>
+</ul>
