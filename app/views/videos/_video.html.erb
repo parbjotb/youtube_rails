@@ -10,9 +10,13 @@
   <div class="lead">
     <p class="font-monospace">Description:</p>
   </div>
+  <% if single_page %>
   <div class="lead">
     <%= video.description %>
   </div>
+  <% else %>
+    <p>Click the song name to view description</p>
+  <% end %>
 </article>
 
 <p class="font-monospace">

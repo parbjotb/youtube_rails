@@ -2,4 +2,4 @@
 <%# This line above puts the value of video.title inside html_title %>
 
 <%# Saying @video will have the show page show an individual listing %>
-<%= render partial: 'video', object: @video, locals: {show_link: false } %>
+<%= render partial: 'video', object: @video, locals: {show_link: false, single_page: true } %>
