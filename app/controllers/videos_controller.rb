@@ -1,7 +1,8 @@
 class VideosController < ApplicationController
   def index
     # now videos will be passed to the index view
-    @videos = Video.includes(:channel_creator).all
+    # @videos = Video.includes(:channel_creator).all
+    @videos = Video.paginate(page: params[:page], per_page: 3)
   end
 
   def show
