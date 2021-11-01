@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
   end
   resources :channel_creators, only: %i[index show]
+  resources :categories, only: %i[index show]
   # get 'videos/index'
   # get 'videos/show'
   # get 'channel_creators/index'
