@@ -1,8 +1,24 @@
 require "csv"
-
+require "json"
+# require "../lib/active_record/add_reset_sequence_pk"
 # database should be wiped and recreated first
 Video.delete_all
 ChannelCreator.delete_all
+# Category.delete_all
+# Category.reset_pk_sequence
+# ActiveRecord::Base.connection.reset_sequence!("categories")
+
+categoryfile = File.read("db/CA_category_id.json")
+
+category_hash = JSON.parse(categoryfile)
+
+category_items = category_hash["items"]
+
+# category_items.each do |i|
+#   category_name = i["snippet"]["title"]
+
+#   category = Category.find_or_create_by(title: category_name)
+# end
 
 # now we take in the csv file and turn it into something we can parse
 filename = Rails.root.join("db/top_videos.csv")
@@ -32,13 +48,14 @@ videos = CSV.parse(csv_data, headers: true, liberal_parsing: true, encoding: "ut
       description:   v["description"],
       likes:         v["likes"],
       dislikes:      v["dislikes"],
-      trending_date: v["trending_date"]
+      trending_date: v["trending_date"],
+      category_id:   v["category_id"]
     )
 
     # this syntax below is equal to
     # movie && movie.valid?
     # if it exists and is valid
-    puts "Invalid video #{v['title']}" unless video&.valid?
+    puts "Invalid video #{v['title']} #{video.errors.full_messages}" unless video&.valid?
   else
     puts "Invalid channel creator,#{v['channel_title']} for video: #{v['title']}"
   end
@@ -66,7 +83,7 @@ puts "Created #{Video.count} videos"
 #     # this syntax below is equal to
 #     # movie && movie.valid?
 #     # like line 26 above in the if statement, if it exists and is valid
-#     puts "Invalid video #{v['title']}" unless video&.valid?
+#     puts "Invalid video #{v['title']} #{video.errors.full_messages}" unless video&.valid?
 #   else
 #     puts "Invalid channel creator,#{v['channel_title']} for video: #{v['title']}"
 #   end
