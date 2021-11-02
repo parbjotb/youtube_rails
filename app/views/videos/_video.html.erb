@@ -43,7 +43,12 @@
   <%= link_to video.channel_creator.name, video.channel_creator %>
 </p>
 
-<p class="font-monospace">Link to video, base url plus slug video_id from csv</p>
+<p class="font-monospace">
+  <strong>Upload Category: </strong>
+  <%= link_to video.category.title, video.category%>
+</p>
+
+<%# <p class="font-monospace">Link to video, base url plus slug video_id from csv</p> %>
 <%# <p>Find how to do concatenation/interpolation with rails</p>
 <p>Want to find how to get that base url and video_id from the csv to join</p>
 And then call that joined value in a link tag somehow here? @baseurl + video.video_id  %>

@@ -1,2 +1,5 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2 class="display-2">Videos in this Category</h2>
+
+
+<%= render partial: @videos, locals: {show_link: true, single_page: false } %>
+<%# <%= will_paginate @videos, renderer: BootstrapPagination::Rails %>
